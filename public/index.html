@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ivory Table | Seaside Fine Dining • Marine Drive, Mumbai</title>
+  <meta name="description" content="The Ivory Table - Where every bite tells a story. Experience Modern Coastal & Progressive Indian-Mediterranean Fusion on Seaside Marine Drive, Mumbai. Reserve your table or order online.">
+
+  <!-- Favicon / Brand Icon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+
+  <!-- Google Fonts: Playfair Display & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Preloader Screen -->
+  <div id="preloader">
+    <div class="preloader-emblem">
+      <span class="preloader-cloche">🍽️</span>
+    </div>
+    <div class="preloader-text">THE IVORY TABLE</div>
+    <div class="preloader-sub">SEASIDE MARINE DRIVE • MUMBAI</div>
+  </div>
+
+  <!-- Ambient Seaside Soundscape Toggle -->
+  <div class="audio-toggle-widget" id="audio-ambient-widget" title="Toggle Seaside Waves & Lounge Music">
+    <div class="audio-bars">
+      <span class="audio-bar"></span>
+      <span class="audio-bar"></span>
+      <span class="audio-bar"></span>
+    </div>
+    <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-primary);">Seaside Waves</span>
+    <i class="fa-solid fa-volume-high" style="color: var(--saffron); font-size: 0.85rem;"></i>
+  </div>
+
+  <!-- Sticky Glassmorphic Navbar -->
+  <header class="navbar-wrapper">
+    <div class="container">
+      <nav class="navbar">
+        <a href="#hero" class="nav-brand">
+          <div class="brand-icon">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <div>
+            <span class="brand-name">THE IVORY TABLE</span>
+            <span class="brand-sub">Marine Drive • Mumbai</span>
+          </div>
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#story" class="nav-link">Our Story</a></li>
+          <li><a href="#menu" class="nav-link">Culinary Menu</a></li>
+          <li><a href="#reservation" class="nav-link">Reservations</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="/admin" class="nav-link" style="color: var(--saffron);"><i class="fa-solid fa-shield-halved"></i> Owner Portal</a></li>
+        </ul>
+
+        <!-- Action Buttons -->
+        <div class="nav-actions">
+          <!-- Dark Mode Toggle -->
+          <button class="btn-icon" id="theme-toggle" aria-label="Toggle Theme" title="Toggle Dark/Light Mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <!-- Shopping Cart Toggle -->
+          <button class="btn-icon btn-cart-toggle" aria-label="Open Order Cart" title="View Order Bag">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="badge-count cart-badge-counter" style="display: none;">0</span>
+          </button>
+
+          <!-- Book Table CTA -->
+          <a href="#reservation" class="btn btn-sunset" style="padding: 10px 22px; font-size: 0.88rem;">
+            <i class="fa-regular fa-calendar-check"></i> Book Table
+          </a>
+
+          <!-- Mobile Nav Toggle -->
+          <button class="mobile-nav-toggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-container">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85" alt="The Ivory Table Seaside Dining Interior" class="hero-bg-image">
+      <div class="hero-overlay"></div>
+      <div class="hero-particles"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-location-pill reveal">
+            <span class="pulse-dot"></span>
+            <span>Seaside Marine Drive, Mumbai</span>
+            <span style="opacity: 0.5;">|</span>
+            <span>Open Mon-Sun 11am-11:30pm</span>
+          </div>
+
+          <h1 class="hero-headline reveal">
+            Where Every Bite Tells a <span class="gold-italics">Story</span> of the <span class="pink-accent">Ocean</span>.
+          </h1>
+
+          <p class="hero-description reveal">
+            Immerse yourself in progressive coastal seafood and Modern Indian-Mediterranean fusion, framed by panoramic Arabian Sea sunsets along the Queen's Necklace.
+          </p>
+
+          <div class="hero-btn-group reveal">
+            <a href="#reservation" class="btn btn-sunset">
+              <i class="fa-solid fa-champagne-glasses"></i> Reserve a Table
+            </a>
+            <a href="#menu" class="btn btn-outline-gold">
+              <i class="fa-solid fa-utensils"></i> Explore Menu
+            </a>
+            <button class="btn btn-purple btn-cart-toggle">
+              <i class="fa-solid fa-truck-fast"></i> Order Online
+            </button>
+          </div>
+
+          <!-- Social Proof & Diners Counter -->
+          <div class="hero-social-proof reveal">
+            <div class="avatar-stack">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Diner Guest">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Diner Guest">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80" alt="Diner Guest">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Diner Guest">
+            </div>
+            <div class="rating-summary">
+              <div class="rating-stars">★★★★★ <span style="font-weight: 700; color: #FFF8F0; margin-left: 6px;">4.9 / 5.0</span></div>
+              <div style="font-size: 0.82rem; color: rgba(255,248,240,0.75);">From 1,400+ verified Mumbai diners & international guests</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Visual Card Showcase -->
+        <div class="hero-visual-card reveal">
+          <!-- Floating Top Badge -->
+          <div class="hero-float-badge hero-float-top">
+            <div class="float-icon sunset">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div>
+              <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Michelin Guide Rec.</div>
+              <div style="font-size: 0.95rem; font-weight: 700;">Best Seaside Table 2026</div>
+            </div>
+          </div>
+
+          <!-- Main Hero Dish Image -->
+          <div class="hero-main-card">
+            <img src="https://images.unsplash.com/photo-1559737558-245cb3518e38?auto=format&fit=crop&w=1000&q=85" alt="Truffle Malabar Lobster Thermidor">
+            <div class="hero-card-badge">
+              <div>
+                <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--golden-yellow); letter-spacing: 1.5px;">Chef's Masterpiece</div>
+                <div style="font-size: 1.05rem; font-weight: 700; color: #FFF8F0;">Truffle Malabar Lobster</div>
+              </div>
+              <div style="font-family: var(--font-accent); font-weight: 700; font-size: 1.25rem; color: var(--saffron);">
+                ₹2,450
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating Bottom Badge -->
+          <div class="hero-float-badge hero-float-bottom">
+            <div class="float-icon purple">
+              <i class="fa-solid fa-cocktail"></i>
+            </div>
+            <div>
+              <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Sunset Hour Special</div>
+              <div style="font-size: 0.95rem; font-weight: 700;">Marine Drive Twilight Cocktail</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANIMATED STATS COUNTER STRIP -->
+  <section class="stats-strip">
+    <div class="container">
+      <div class="stats-card reveal">
+        <div class="stat-item">
+          <div class="stat-num text-gradient" data-target="14">14</div>
+          <div class="stat-label">Years of Mastery</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num text-gold" data-target="85000+">85,000+</div>
+          <div class="stat-label">Happy Guests Welcomed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num text-gradient" data-target="120+">120+</div>
+          <div class="stat-label">Artisanal Recipes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num text-gold" data-target="4.9">4.9★</div>
+          <div class="stat-label">Star Guest Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY & AMBIENCE SECTION -->
+  <section class="story-section" id="story">
+    <div class="container">
+      <div class="story-grid">
+        <!-- Visual Mosaic of Restaurant & Kitchen -->
+        <div class="story-mosaic slide-left">
+          <div class="mosaic-img">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85" alt="Fine dining table setting at The Ivory Table">
+          </div>
+          <div class="mosaic-img tall">
+            <img src="https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=800&q=85" alt="Seaside oceanfront terrace on Marine Drive">
+          </div>
+          <div class="mosaic-img">
+            <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=85" alt="Executive Chef plating culinary art">
+          </div>
+          <div class="mosaic-img">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=85" alt="Twilight luxury cocktail bar">
+          </div>
+
+          <!-- Central Award Badge -->
+          <div class="story-badge-award">
+            <div class="award-stars">★★★★★</div>
+            <div class="award-title">Mumbai Epicurean Gold Medal</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 2px;">2024 - 2026 Consecutive Winner</div>
+          </div>
+        </div>
+
+        <!-- Story Content -->
+        <div class="story-content slide-right">
+          <div class="section-tag purple">
+            <i class="fa-solid fa-sparkles"></i> Culinary Artistry Meets The Arabian Sea
+          </div>
+          <h2 class="section-title">A Symphony of Coastal Flavors on Marine Drive</h2>
+          <p>
+            Perched gracefully along Mumbai's illustrious seaside Promenade, <strong>The Ivory Table</strong> was envisioned as an ode to maritime elegance and progressive gastronomy. Here, century-old Malabar and Konkani culinary secrets intertwine with Mediterranean sophistication.
+          </p>
+          <p>
+            From Arabian Sea catch delivered daily by artisanal fishermen at dawn to cold-pressed Kashmiri saffron and wild Himalayan morels, every dish is crafted with reverence. As twilight casts its violet and gold hues over the Arabian waters, our tables transform into Mumbai's most romantic dining sanctuary.
+          </p>
+
+          <!-- Feature Highlights Grid -->
+          <div class="story-features">
+            <div class="feature-box">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-water"></i>
+              </div>
+              <div>
+                <div class="feature-title">Day-Catch Seafood</div>
+                <div class="feature-desc">Lobster, King Prawns & Sea Bass sourced daily from local docks.</div>
+              </div>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon-wrap purple">
+                <i class="fa-solid fa-wine-bottle"></i>
+              </div>
+              <div>
+                <div class="feature-title">Sommelier Cellar</div>
+                <div class="feature-desc">Curated 200+ global vintage labels and botanical craft gin infusions.</div>
+              </div>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon-wrap purple">
+                <i class="fa-solid fa-sun"></i>
+              </div>
+              <div>
+                <div class="feature-title">Sunset Sundowners</div>
+                <div class="feature-desc">4 PM to 7 PM sunset lounge with sparkling drinks & tapas.</div>
+              </div>
+            </div>
+
+            <div class="feature-box">
+              <div class="feature-icon-wrap">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+              <div>
+                <div class="feature-title">Farm-to-Plate Greens</div>
+                <div class="feature-desc">Organic micro-greens & heirloom produce from local farms.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE MENU SECTION -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag gold">
+          <i class="fa-solid fa-book-open"></i> Curated Gastronomy
+        </div>
+        <h2 class="section-title">The Culinary Repertoire</h2>
+        <p class="section-subtitle">
+          Indulge in our signature creations, prepared à la minute with royal saffron, roasted spices, and the freshest coastal bounty.
+        </p>
+      </div>
+
+      <!-- Menu Controls: Search, Category Pills & Dietary Toggles -->
+      <div class="menu-controls reveal">
+        <!-- Search Bar -->
+        <div class="menu-search-bar">
+          <i class="fa-solid fa-magnifying-glass search-icon-inside"></i>
+          <input type="text" id="menu-search-input" class="menu-search-input" placeholder="Search dishes, ingredients (e.g. Lobster, Saffron, Biryani)...">
+        </div>
+
+        <!-- Category Pills -->
+        <div class="menu-category-pills">
+          <button class="cat-pill active" data-category="All">All Delights</button>
+          <button class="cat-pill" data-category="Starters">Small Plates & Starters</button>
+          <button class="cat-pill" data-category="Coastal Seafood">Coastal Seafood</button>
+          <button class="cat-pill" data-category="Progressive Mains">Progressive Mains</button>
+          <button class="cat-pill" data-category="Breads & Biryanis">Breads & Biryanis</button>
+          <button class="cat-pill" data-category="Decadent Desserts">Decadent Desserts</button>
+          <button class="cat-pill" data-category="Beverages">Cocktails & Elixirs</button>
+        </div>
+
+        <!-- Dietary Tag Toggles -->
+        <div class="dietary-filters">
+          <span style="font-size: 0.82rem; font-weight: 600; color: var(--text-muted); align-self: center;">Dietary:</span>
+          <button class="diet-toggle active" data-diet="All">All Diets</button>
+          <button class="diet-toggle" data-diet="Veg"><i class="fa-solid fa-circle" style="color: #22C55E; font-size: 0.6rem;"></i> Vegetarian</button>
+          <button class="diet-toggle" data-diet="Non-Veg"><i class="fa-solid fa-circle" style="color: #EF4444; font-size: 0.6rem;"></i> Non-Vegetarian</button>
+          <button class="diet-toggle" data-diet="Chef's Special"><i class="fa-solid fa-star" style="color: var(--golden-yellow); font-size: 0.75rem;"></i> Chef's Special</button>
+          <button class="diet-toggle" data-diet="Vegan"><i class="fa-solid fa-seedling" style="color: #10B981; font-size: 0.75rem;"></i> Vegan</button>
+        </div>
+      </div>
+
+      <!-- Menu Dishes Grid (Populated dynamically) -->
+      <div class="menu-grid" id="menu-grid">
+        <!-- Dish Cards injected by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLE RESERVATION SECTION -->
+  <section class="reservation-section" id="reservation">
+    <div class="container">
+      <div class="reservation-container">
+        <!-- Info Column -->
+        <div class="reservation-info slide-left">
+          <div class="section-tag" style="background: rgba(255, 107, 53, 0.2); color: var(--golden-yellow); border-color: rgba(247, 184, 1, 0.3);">
+            <i class="fa-solid fa-bell-concierge"></i> VIP Table Booking
+          </div>
+          <h2>Reserve Your Seaside Dining Experience</h2>
+          <p>
+            Whether planning an intimate seaside sunset dinner, a corporate celebration, or an anniversary under the starlit Marine Drive sky, our host team ensures an unforgettable evening.
+          </p>
+
+          <div class="res-perks">
+            <div class="perk-item">
+              <div class="perk-bullet"><i class="fa-solid fa-check"></i></div>
+              <div><strong>Guaranteed Ocean View:</strong> Tables on the Seaside Terrace receive direct sunset views.</div>
+            </div>
+            <div class="perk-item">
+              <div class="perk-bullet"><i class="fa-solid fa-check"></i></div>
+              <div><strong>Complimentary Valet Parking:</strong> Premium seaside driveway parking on Marine Drive.</div>
+            </div>
+            <div class="perk-item">
+              <div class="perk-bullet"><i class="fa-solid fa-check"></i></div>
+              <div><strong>Instant Booking Confirmation:</strong> Direct code and calendar invite sent instantly.</div>
+            </div>
+            <div class="perk-item">
+              <div class="perk-bullet"><i class="fa-solid fa-check"></i></div>
+              <div><strong>Bespoke Dining Requests:</strong> Anniversary cakes, floral arrangements & sommelier pairings.</div>
+            </div>
+          </div>
+
+          <div style="background: rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 18px; border: 1px solid rgba(247, 184, 1, 0.2);">
+            <div style="font-size: 0.85rem; color: var(--golden-yellow);"><i class="fa-solid fa-phone-volume"></i> Prefer to Reserve Over Phone?</div>
+            <div style="font-size: 1.25rem; font-weight: 700; color: #FFF8F0; margin-top: 4px;">+91 98563 21456 / 022-22894500</div>
+          </div>
+        </div>
+
+        <!-- Reservation Form Card -->
+        <div class="reservation-form-card slide-right">
+          <form id="reservation-form">
+            <div class="res-form-grid">
+              <div class="form-group">
+                <label for="res-name"><i class="fa-solid fa-user"></i> Full Name *</label>
+                <input type="text" id="res-name" class="form-control" placeholder="Dr. Vikramaditya Singhania" required>
+              </div>
+
+              <div class="form-group">
+                <label for="res-phone"><i class="fa-solid fa-phone"></i> Phone Number *</label>
+                <input type="tel" id="res-phone" class="form-control" placeholder="9856321456" required>
+              </div>
+
+              <div class="form-group">
+                <label for="res-email"><i class="fa-solid fa-envelope"></i> Email Address *</label>
+                <input type="email" id="res-email" class="form-control" placeholder="20tc1va145@mitsgwl.ac.in" required>
+              </div>
+
+              <div class="form-group">
+                <label for="res-guests"><i class="fa-solid fa-users"></i> Number of Guests *</label>
+                <select id="res-guests" class="form-control" required>
+                  <option value="1">1 Diner (Solo Gourmet)</option>
+                  <option value="2" selected>2 Guests (Romantic Table)</option>
+                  <option value="4">4 Guests (Family / Friends)</option>
+                  <option value="6">6 Guests (Dinner Party)</option>
+                  <option value="8">8 Guests (Banquet Table)</option>
+                  <option value="12">12+ Guests (VIP Private Lounge)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="res-date"><i class="fa-regular fa-calendar"></i> Date *</label>
+                <input type="date" id="res-date" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label for="res-time"><i class="fa-regular fa-clock"></i> Time Slot *</label>
+                <select id="res-time" class="form-control" required>
+                  <optgroup label="Lunch Service (11am - 4pm)">
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">1:00 PM</option>
+                    <option value="14:00">2:00 PM</option>
+                    <option value="15:00">3:00 PM</option>
+                  </optgroup>
+                  <optgroup label="High Tea & Sundowners (4pm - 7pm)">
+                    <option value="16:30">4:30 PM (Sunset Golden Hour)</option>
+                    <option value="17:30" selected>5:30 PM (Sunset Spectacular)</option>
+                    <option value="18:30">6:30 PM (Twilight Horizon)</option>
+                  </optgroup>
+                  <optgroup label="Dinner Fine Dining (7pm - 11:30pm)">
+                    <option value="19:30">7:30 PM</option>
+                    <option value="20:30">8:30 PM (Peak Dinner)</option>
+                    <option value="21:30">9:30 PM</option>
+                    <option value="22:30">10:30 PM (Late Night Dining)</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label for="res-area"><i class="fa-solid fa-compass"></i> Preferred Seating Zone *</label>
+                <select id="res-area" class="form-control" required>
+                  <option value="Seaside Terrace" selected>Seaside Terrace (Panoramic Arabian Sea View)</option>
+                  <option value="Indoor Fine Dining">Indoor Glasshouse (Chandelier & Live Piano)</option>
+                  <option value="Sunset Deck">Sunset Deck Lounge (Al Fresco Twilight)</option>
+                  <option value="Private VIP Lounge">Private VIP Wine Cellar (Exclusive Occasions)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="res-occasion"><i class="fa-solid fa-cake-candles"></i> Dining Occasion</label>
+                <select id="res-occasion" class="form-control">
+                  <option value="Casual Dining">Casual Seaside Dining</option>
+                  <option value="Anniversary">Anniversary Celebration</option>
+                  <option value="Birthday">Birthday Gathering</option>
+                  <option value="Date Night">Romantic Date Night</option>
+                  <option value="Business Lunch">Business / Corporate Dinner</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="res-requests"><i class="fa-solid fa-comment-dots"></i> Special Requests</label>
+                <input type="text" id="res-requests" class="form-control" placeholder="e.g. Window booth, anniversary dessert...">
+              </div>
+
+              <div class="form-group full" style="margin-top: 10px;">
+                <button type="submit" class="btn btn-sunset" style="width: 100%; font-size: 1.08rem; padding: 15px;">
+                  <i class="fa-solid fa-calendar-check"></i> Reserve My Seaside Table
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER REVIEWS & TESTIMONIALS -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag purple">
+          <i class="fa-solid fa-heart"></i> Guest Accolades
+        </div>
+        <h2 class="section-title">Words from Our Patrons</h2>
+        <p class="section-subtitle">
+          From renowned international food critics to couples celebrating milestones, hear why The Ivory Table is cherished.
+        </p>
+      </div>
+
+      <!-- Reviews Grid -->
+      <div class="reviews-grid" id="reviews-container">
+        <!-- Reviews loaded from backend or state -->
+      </div>
+
+      <!-- Write a Review Form Card -->
+      <div class="reveal" style="max-width: 760px; margin: 40px auto 0 auto; background: var(--bg-surface); border: 1px solid var(--border-light); border-radius: 28px; padding: 36px; box-shadow: var(--shadow-md);">
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 6px; text-align: center;">Have You Dined with Us Recently?</h3>
+        <p style="text-align: center; color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 24px;">Share your experience with our Executive Chef & Sommelier.</p>
+
+        <form id="submit-review-form">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+            <div class="form-group">
+              <label style="color: var(--text-primary);">Your Name *</label>
+              <input type="text" id="rev-name" class="form-control-light" required placeholder="Aarav Mehta">
+            </div>
+            <div class="form-group">
+              <label style="color: var(--text-primary);">Star Rating *</label>
+              <select id="rev-rating" class="form-control-light">
+                <option value="5">★★★★★ (5 Stars - Extraordinary)</option>
+                <option value="4">★★★★☆ (4 Stars - Excellent)</option>
+                <option value="3">★★★☆☆ (3 Stars - Good)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 16px;">
+            <label style="color: var(--text-primary);">Favorite Dish Savoring</label>
+            <input type="text" id="rev-dish" class="form-control-light" placeholder="e.g. Truffle Malabar Lobster or 24K Rasmalai">
+          </div>
+
+          <div class="form-group" style="margin-bottom: 20px;">
+            <label style="color: var(--text-primary);">Your Feedback & Memories *</label>
+            <textarea id="rev-text" class="form-control-light" rows="3" required placeholder="Describe the ambiance, presentation, and taste..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-sunset" style="width: 100%;">
+            <i class="fa-solid fa-paper-plane"></i> Submit Diner Review
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION, OPENING HOURS & CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag gold">
+          <i class="fa-solid fa-map-location-dot"></i> Coastal Sanctuary
+        </div>
+        <h2 class="section-title">Visit Us on Marine Drive</h2>
+        <p class="section-subtitle">
+          Located opposite the tranquil Arabian Sea waters, steps away from Nariman Point and Churchgate.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information Card -->
+        <div class="contact-info-card slide-left">
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <div class="info-title">Location Address</div>
+              <div class="info-value">Seaside Marine Drive, Mumbai - 400020, Maharashtra, India</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Opposite Sea Face Promenade • Valet Available</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon purple">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+              <div class="info-title">Reservations & Concierge</div>
+              <div class="info-value">+91 98563 21456 / 022-22894500</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">WhatsApp Booking concierge available 24/7</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon red">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <div class="info-title">Official Email</div>
+              <div class="info-value">20tc1va145@mitsgwl.ac.in</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Private dining & banquet inquiries</div>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div>
+              <div class="info-title">Operating Hours</div>
+              <div class="info-value">Monday – Sunday: 11:00 AM – 11:30 PM</div>
+              <div style="font-size: 0.85rem; color: var(--saffron); margin-top: 4px;">Lunch: 11am-4pm | Sundowners: 4pm-7pm | Dinner: 7pm-11:30pm</div>
+            </div>
+          </div>
+
+          <!-- Quick Banquet Inquiry Form -->
+          <div style="margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
+            <h4 style="font-family: var(--font-serif); margin-bottom: 12px; font-size: 1.15rem;">Private Event / Banquet Inquiry</h4>
+            <form id="contact-inquiry-form">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px;">
+                <input type="text" id="contact-name" class="form-control-light" placeholder="Your Name" required>
+                <input type="tel" id="contact-phone" class="form-control-light" placeholder="Phone Number" required>
+              </div>
+              <div style="margin-bottom: 12px;">
+                <input type="email" id="contact-email" class="form-control-light" placeholder="Email Address" required>
+              </div>
+              <div style="margin-bottom: 12px;">
+                <input type="text" id="contact-subject" class="form-control-light" placeholder="Event Type (e.g. Corporate Dinner, Wedding Banquet)" required>
+              </div>
+              <div style="margin-bottom: 14px;">
+                <textarea id="contact-msg" class="form-control-light" rows="2" placeholder="Guest count, date, special requests..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-sunset" style="width: 100%;">
+                Send Inquiry <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Google Map Embed & Directions -->
+        <div class="map-card-wrapper slide-right">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15093.078426028045!2d72.818816!3d18.940173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d1e70e9a31a9%3A0x67399f9398f62f3a!2sMarine%20Dr%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="The Ivory Table Marine Drive Mumbai Location Map">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>THE IVORY TABLE</h3>
+          <p>
+            Where every bite tells a story. Modern Coastal gastronomy & Progressive Indian-Mediterranean Fusion on Marine Drive, Mumbai.
+          </p>
+          <div style="display: flex; gap: 12px; margin-top: 14px;">
+            <a href="#" class="btn-icon" style="background: rgba(255,255,255,0.08); color: #fff;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="btn-icon" style="background: rgba(255,255,255,0.08); color: #fff;"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="btn-icon" style="background: rgba(255,255,255,0.08); color: #fff;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="btn-icon" style="background: rgba(255,255,255,0.08); color: #fff;"><i class="fa-brands fa-tripadvisor"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#hero">Home & Welcome</a></li>
+            <li><a href="#story">Chef Philosophy</a></li>
+            <li><a href="#menu">Curated Menu</a></li>
+            <li><a href="#reservation">Reserve a Table</a></li>
+            <li><a href="#reviews">Patron Reviews</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Experiences</h4>
+          <ul>
+            <li><a href="#reservation">Seaside Sunset Terrace</a></li>
+            <li><a href="#reservation">Private VIP Wine Cellar</a></li>
+            <li><a href="#reservation">Chef's 7-Course Omakase</a></li>
+            <li><a href="#reservation">Corporate Banqueting</a></li>
+            <li><a href="/admin">Owner / Manager Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4 style="color: var(--golden-yellow); font-size: 1.1rem; margin-bottom: 14px; font-family: var(--font-accent);">The Epicurean Club</h4>
+          <p style="font-size: 0.88rem; color: rgba(255,248,240,0.7); margin-bottom: 14px;">
+            Subscribe to receive seasonal tasting invitations and priority sunset table bookings.
+          </p>
+          <input type="email" placeholder="Enter your email address...">
+          <button class="btn btn-sunset" style="width: 100%; padding: 10px;">
+            Join VIP Guestlist
+          </button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 The Ivory Table. All rights reserved. • Seaside Marine Drive, Mumbai, India.
+        </div>
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <a href="/admin" class="owner-login-link">
+            <i class="fa-solid fa-lock"></i> Owner / Admin Server Portal
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDE-OUT CART DRAWER -->
+  <div class="cart-drawer-backdrop" id="cart-drawer-backdrop">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-bag-shopping" style="color: var(--saffron); font-size: 1.3rem;"></i>
+          <h3 class="cart-title">Your Culinary Order</h3>
+        </div>
+        <button class="cart-close-btn" id="cart-close-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="cart-items-body" id="cart-items-container">
+        <!-- Injected via app.js -->
+      </div>
+
+      <div class="cart-footer">
+        <!-- Coupon Code Input -->
+        <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+          <input type="text" id="coupon-input" placeholder="Promo code (e.g. SEASIDE10)" style="flex-grow: 1; padding: 10px 14px; border-radius: var(--radius-full); border: 1px solid var(--border-subtle); outline: none; font-size: 0.88rem;">
+          <button id="apply-coupon-btn" class="btn" style="background: var(--rich-charcoal); color: #fff; padding: 8px 16px; font-size: 0.82rem;">Apply</button>
+        </div>
+
+        <div class="cart-subtotal-row">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal">₹0</span>
+        </div>
+        <div class="cart-subtotal-row">
+          <span>GST (5%):</span>
+          <span id="cart-tax">₹0</span>
+        </div>
+        <div class="cart-subtotal-row" style="color: var(--deep-red);">
+          <span>Promo Discount:</span>
+          <span id="cart-discount">₹0</span>
+        </div>
+        <div class="cart-total-row">
+          <span>Estimated Total:</span>
+          <span id="cart-total" style="color: var(--saffron);">₹0</span>
+        </div>
+
+        <button class="btn btn-sunset" style="width: 100%; padding: 14px; font-size: 1.05rem;" onclick="openCheckoutModal()">
+          Proceed to Order <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC MODAL CONTAINER -->
+  <div id="modal-container"></div>
+
+  <!-- Scripts -->
+  <script src="/js/audio.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

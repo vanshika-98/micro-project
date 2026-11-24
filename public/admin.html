@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner & Manager Portal | The Ivory Table • Marine Drive</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👔</text></svg>">
+
+  <!-- Google Fonts: Playfair Display, Poppins & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Admin Stylesheet -->
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+  <!-- ADMIN AUTH LOGIN OVERLAY -->
+  <div class="login-screen-overlay" id="login-overlay">
+    <div class="login-card">
+      <div class="login-emblem">
+        <i class="fa-solid fa-crown"></i>
+      </div>
+      <h2 class="login-title">The Ivory Table</h2>
+      <div style="font-family: var(--font-accent); font-size: 0.8rem; letter-spacing: 2px; color: var(--gold); text-transform: uppercase; margin-bottom: 8px;">
+        Owner & Manager Server Portal
+      </div>
+      <p class="login-sub">Seaside Marine Drive, Mumbai Management Console</p>
+
+      <form id="admin-login-form">
+        <div class="admin-form-group" style="text-align: left;">
+          <label>Admin Email</label>
+          <input type="email" id="login-email" class="admin-input" value="admin@ivorytable.com" required>
+        </div>
+        <div class="admin-form-group" style="text-align: left; margin-bottom: 24px;">
+          <label>Password or Access PIN</label>
+          <input type="password" id="login-password" class="admin-input" value="admin123" required>
+        </div>
+
+        <button type="submit" class="btn-admin btn-admin-saffron" style="width: 100%; justify-content: center; padding: 14px; font-size: 1rem;">
+          Access Owner Portal <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+
+      <div class="login-badge-hint">
+        <i class="fa-solid fa-circle-info"></i> Default credentials prefilled: <strong>admin@ivorytable.com / admin123</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN MAIN LAYOUT -->
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-icon">
+          <i class="fa-solid fa-gem"></i>
+        </div>
+        <div>
+          <div class="sidebar-brand-title">THE IVORY TABLE</div>
+          <div class="sidebar-badge">Owner Management</div>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="sidebar-nav">
+        <button class="nav-item-btn active" data-view="overview">
+          <div class="nav-item-left">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Overview</span>
+          </div>
+        </button>
+
+        <button class="nav-item-btn" data-view="kds">
+          <div class="nav-item-left">
+            <i class="fa-solid fa-fire-burner"></i>
+            <span>Live Kitchen (KDS)</span>
+          </div>
+          <span class="sidebar-pill-count" id="sidebar-orders-count">3</span>
+        </button>
+
+        <button class="nav-item-btn" data-view="reservations">
+          <div class="nav-item-left">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Table Reservations</span>
+          </div>
+        </button>
+
+        <button class="nav-item-btn" data-view="menu">
+          <div class="nav-item-left">
+            <i class="fa-solid fa-utensils"></i>
+            <span>Menu & Inventory</span>
+          </div>
+        </button>
+
+        <button class="nav-item-btn" data-view="reviews">
+          <div class="nav-item-left">
+            <i class="fa-solid fa-star"></i>
+            <span>Guest Reviews</span>
+          </div>
+        </button>
+
+        <button class="nav-item-btn" data-view="messages">
+          <div class="nav-item-left">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <span>Inquiries & Banquets</span>
+          </div>
+          <span class="sidebar-pill-count green" id="sidebar-msg-count">1</span>
+        </button>
+
+        <div style="margin-top: auto; padding-top: 14px; border-top: 1px solid var(--admin-border-subtle);">
+          <a href="/" target="_blank" class="nav-item-btn" style="color: var(--gold);">
+            <div class="nav-item-left">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>Customer Website</span>
+            </div>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer User Profile -->
+      <div class="sidebar-footer">
+        <div class="admin-user-profile">
+          <div class="admin-avatar">GM</div>
+          <div class="admin-user-info">
+            <div class="user-name">Executive Chef</div>
+            <div class="user-role">Administrator</div>
+          </div>
+        </div>
+        <button class="tbl-action-btn delete" id="admin-logout-btn" title="Sign Out">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+      <!-- Topbar Header -->
+      <header class="admin-topbar">
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <button class="tbl-action-btn" id="mobile-sidebar-toggle" style="display: none;">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h2 class="topbar-title" id="current-view-title">Executive Dashboard & Live Analytics</h2>
+        </div>
+
+        <div class="topbar-actions">
+          <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--emerald-green); background: rgba(16,185,129,0.15); padding: 5px 12px; border-radius: 9999px;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--emerald-green);"></span>
+            Server Live (Port 5000)
+          </span>
+
+          <button class="btn-admin btn-admin-outline" id="btn-add-res-modal">
+            <i class="fa-solid fa-plus"></i> Walk-In Table
+          </button>
+
+          <button class="btn-admin btn-admin-saffron" id="btn-add-dish-modal">
+            <i class="fa-solid fa-utensils"></i> Add Dish
+          </button>
+        </div>
+      </header>
+
+      <!-- VIEW CONTAINERS -->
+      <div class="admin-content-view">
+
+        <!-- VIEW 1: EXECUTIVE DASHBOARD OVERVIEW -->
+        <section class="view-section active" id="view-overview">
+          <!-- KPI Metrics Cards -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div>
+                <div class="kpi-title">Today's Reservations</div>
+                <div class="kpi-value text-gold" id="kpi-today-res">6</div>
+                <div class="kpi-sub"><i class="fa-solid fa-arrow-trend-up"></i> Full capacity tonight</div>
+              </div>
+              <div class="kpi-icon-wrap gold">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div>
+                <div class="kpi-title">Active Kitchen Orders</div>
+                <div class="kpi-value" style="color: var(--saffron);" id="kpi-active-orders">3</div>
+                <div class="kpi-sub"><i class="fa-solid fa-clock"></i> Avg prep: 18 mins</div>
+              </div>
+              <div class="kpi-icon-wrap">
+                <i class="fa-solid fa-fire-burner"></i>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div>
+                <div class="kpi-title">Gross Revenue (Today)</div>
+                <div class="kpi-value text-gold" id="kpi-revenue">₹18,450</div>
+                <div class="kpi-sub"><i class="fa-solid fa-arrow-up"></i> +14% vs yesterday</div>
+              </div>
+              <div class="kpi-icon-wrap green">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div>
+                <div class="kpi-title">Table Occupancy</div>
+                <div class="kpi-value" style="color: var(--royal-purple);" id="kpi-occupancy">78%</div>
+                <div class="kpi-sub">Seaside Terrace 100% booked</div>
+              </div>
+              <div class="kpi-icon-wrap purple">
+                <i class="fa-solid fa-chair"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Two Column Recent Grid -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            <!-- Recent Table Reservations -->
+            <div class="admin-table-container">
+              <div class="table-toolbar">
+                <div style="font-weight: 700; font-size: 1.05rem;">Upcoming Dinner Reservations</div>
+                <button class="btn-admin btn-admin-outline" style="padding: 6px 14px; font-size: 0.8rem;" onclick="switchView('reservations')">
+                  View All <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Guest</th>
+                    <th>Guests</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="dash-recent-reservations">
+                  <!-- Populated by admin.js -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Recent Online Orders -->
+            <div class="admin-table-container">
+              <div class="table-toolbar">
+                <div style="font-weight: 700; font-size: 1.05rem;">Recent Live Orders</div>
+                <button class="btn-admin btn-admin-outline" style="padding: 6px 14px; font-size: 0.8rem;" onclick="switchView('kds')">
+                  Open KDS <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Order #</th>
+                    <th>Customer</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="dash-recent-orders">
+                  <!-- Populated by admin.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 2: KITCHEN DISPLAY SYSTEM (KDS) -->
+        <section class="view-section" id="view-kds">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <div>
+              <p style="color: var(--text-muted); font-size: 0.9rem;">
+                Real-time kitchen order dispatch pipeline. Advance orders from Pending to In Kitchen to Ready and Delivered.
+              </p>
+            </div>
+            <button class="btn-admin btn-admin-outline" onclick="fetchOrders()">
+              <i class="fa-solid fa-arrows-rotate"></i> Refresh Tickets
+            </button>
+          </div>
+
+          <div class="kds-pipeline">
+            <!-- Column 1: Pending -->
+            <div class="kds-column">
+              <div class="kds-col-header">
+                <div class="kds-col-title" style="color: var(--saffron);">
+                  <i class="fa-solid fa-clock"></i> New / Pending
+                </div>
+                <span class="kds-counter" id="count-kds-pending">0</span>
+              </div>
+              <div class="kds-cards-list" id="kds-pending-cards"></div>
+            </div>
+
+            <!-- Column 2: In Kitchen -->
+            <div class="kds-column">
+              <div class="kds-col-header">
+                <div class="kds-col-title" style="color: var(--gold);">
+                  <i class="fa-solid fa-fire"></i> In Kitchen (Cooking)
+                </div>
+                <span class="kds-counter" id="count-kds-kitchen">0</span>
+              </div>
+              <div class="kds-cards-list" id="kds-kitchen-cards"></div>
+            </div>
+
+            <!-- Column 3: Ready for Service -->
+            <div class="kds-column">
+              <div class="kds-col-header">
+                <div class="kds-col-title" style="color: var(--emerald-green);">
+                  <i class="fa-solid fa-bell-concierge"></i> Ready to Serve / Dispatch
+                </div>
+                <span class="kds-counter" id="count-kds-ready">0</span>
+              </div>
+              <div class="kds-cards-list" id="kds-ready-cards"></div>
+            </div>
+
+            <!-- Column 4: Delivered -->
+            <div class="kds-column">
+              <div class="kds-col-header">
+                <div class="kds-col-title" style="color: var(--royal-purple);">
+                  <i class="fa-solid fa-circle-check"></i> Completed / Delivered
+                </div>
+                <span class="kds-counter" id="count-kds-delivered">0</span>
+              </div>
+              <div class="kds-cards-list" id="kds-delivered-cards"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 3: TABLE RESERVATIONS MANAGEMENT -->
+        <section class="view-section" id="view-reservations">
+          <div class="admin-table-container">
+            <div class="table-toolbar">
+              <div class="table-search-box">
+                <i class="fa-solid fa-magnifying-glass" style="color: var(--text-dim);"></i>
+                <input type="text" placeholder="Search by name, phone or code...">
+              </div>
+
+              <div class="table-filter-pills">
+                <button class="tbl-pill active" onclick="fetchReservations()">All Bookings</button>
+                <button class="btn-admin btn-admin-saffron" onclick="openWalkInModal()" style="padding: 6px 14px; font-size: 0.82rem;">
+                  <i class="fa-solid fa-plus"></i> Add Reservation
+                </button>
+              </div>
+            </div>
+
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Booking Code</th>
+                  <th>Guest Details</th>
+                  <th>Party</th>
+                  <th>Date & Time</th>
+                  <th>Zone / Occasion</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-reservations-tbody">
+                <!-- Populated by admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- VIEW 4: MENU & INVENTORY MANAGEMENT -->
+        <section class="view-section" id="view-menu">
+          <div class="admin-table-container">
+            <div class="table-toolbar">
+              <div style="font-weight: 700; font-size: 1.1rem;">Culinary Repertoire & Availability</div>
+              <button class="btn-admin btn-admin-saffron" onclick="openDishFormModal()">
+                <i class="fa-solid fa-plus"></i> Add New Dish
+              </button>
+            </div>
+
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Visual</th>
+                  <th>Dish Name</th>
+                  <th>Category</th>
+                  <th>Dietary</th>
+                  <th>Price</th>
+                  <th>In Stock</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="admin-menu-tbody">
+                <!-- Populated by admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- VIEW 5: GUEST REVIEWS MODERATION -->
+        <section class="view-section" id="view-reviews">
+          <div style="max-width: 900px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+              <div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.4rem;">Customer Feedback & Moderation</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem;">Approve or hide reviews before featuring them on the public home page.</p>
+              </div>
+              <button class="btn-admin btn-admin-outline" onclick="fetchReviews()">
+                <i class="fa-solid fa-arrows-rotate"></i> Refresh
+              </button>
+            </div>
+            <div id="admin-reviews-list">
+              <!-- Populated by admin.js -->
+            </div>
+          </div>
+        </section>
+
+        <!-- VIEW 6: INQUIRIES & BANQUETS -->
+        <section class="view-section" id="view-messages">
+          <div style="max-width: 900px; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+              <div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.4rem;">Customer Inquiries & Banquets</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem;">Inquiries submitted through the Marine Drive event contact form.</p>
+              </div>
+              <button class="btn-admin btn-admin-outline" onclick="fetchMessages()">
+                <i class="fa-solid fa-arrows-rotate"></i> Refresh
+              </button>
+            </div>
+            <div id="admin-messages-list">
+              <!-- Populated by admin.js -->
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ADMIN DYNAMIC MODAL CONTAINER -->
+  <div id="admin-modal-container"></div>
+
+  <!-- Admin Script -->
+  <script src="/js/admin.js"></script>
+</body>
+</html>
